@@ -1,0 +1,253 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  background-color: rgb(90, 121, 111);
+  color: white;
+}
+
+.content-container {
+}
+
+header {
+  /* border: 1px solid white; */
+  /* border-radius: 20px; */
+  padding: 15px 20px;
+  max-width: 1100px;
+  margin-top: 40px;
+}
+
+.nav-branding {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  /* font-style: italic;
+  font-weight: bold; */
+  font-size: 2rem;
+  animation: transitionIn 4s;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu li a {
+  padding-left: 20px;
+}
+
+.nav-link {
+  transition: 0.4s ease;
+  font-size: 23px;
+  animation: transitionInNav 2s;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.nav-link:hover {
+  color: rgb(47, 47, 95);
+}
+
+.icon-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+/* Landing Main Container and  CTA content  */
+.main-container {
+  /* border: 1px solid white; */
+  display: flex;
+  margin: 90px 40px;
+}
+
+.main-right img {
+  animation: transitionIn 5s;
+  max-width: 500px;
+  margin-left: 80px;
+}
+.main-right {
+  /* border: 1px solid white; */
+  padding: 5px;
+}
+
+.main-left {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.main-left h1 {
+  font-size: 50px;
+  color: rgb(238, 111, 26);
+}
+.main-left p {
+  margin-top: 30px;
+  word-spacing: 1px;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.booking-button {
+  margin-top: 20px;
+  background-color: rgb(238, 111, 26);
+  border: 1px solid rgb(238, 111, 26);
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+
+  width: 270px;
+  padding: 7px 19px;
+}
+
+.shopping-bag i {
+  color: rgb(238, 111, 26);
+  font-size: 30px;
+}
+
+/* Section 1 (Trending) */
+.section-container {
+  background-color: rgb(238, 111, 26);
+  height: 300px;
+  margin: 0px;
+}
+/* Media Queries */
+
+@media (max-width: 1098px) {
+  .main-container .main-right img {
+    width: 370px;
+  }
+}
+
+@media (max-width: 798px) {
+  .main-container .main-right img {
+    width: 370px;
+  }
+}
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 30px;
+    align-items: center;
+    /* border: 1px solid white; */
+  }
+
+  .main-container .main-right {
+    /* border: 1px solid white; */
+    margin-top: 40px;
+    margin-right: 300px;
+  }
+  .main-container .main-right img {
+    width: 200px;
+  }
+  .shopping-bag i {
+    display: none;
+  }
+  .icon-menu {
+    display: block;
+    animation: transitionInNav 2s;
+  }
+
+  .icon-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .icon-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .icon-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 30px;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgb(238, 111, 26);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+}
+
+/* smaller screens */
+@media (max-width: 480px) {
+  .nav-branding {
+    font-size: 20px;
+  }
+  .bar {
+    width: 20px;
+    height: 3px;
+  }
+
+  .main-container {
+    flex-direction: column;
+  }
+
+  .main-right img {
+    max-width: 50px;
+  }
+}
+
+/* Animations */
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+@keyframes transitionInNav {
+  from {
+    opacity: 0;
+    transform: rotateY(-10);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0);
+  }
+}
